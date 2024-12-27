@@ -1,24 +1,34 @@
+import React from 'react'
+
 import {
-    createTheme,
-    DEFAULT_THEME,
-    MantineProvider,
-    mergeMantineTheme,
-} from "@mantine/core";
-import { breakpoints, colors } from "../../shared/styles/theme";
-import React from "react";
+	DEFAULT_THEME,
+	MantineProvider,
+	createTheme,
+	mergeMantineTheme,
+} from '@mantine/core'
+
+import {
+	breakpoints,
+	colors,
+} from '../../shared/styles/theme'
 
 const theme = mergeMantineTheme(
-    DEFAULT_THEME,
-    
-    createTheme({
-        
+	DEFAULT_THEME,
 
-        breakpoints,
-        colors,
-    }),
-);
+	createTheme({
+		breakpoints,
+		colors,
+	}),
+)
 
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
-    return <MantineProvider theme={theme} forceColorScheme='dark' >{children}</MantineProvider>
+export default function RootLayout({
+	children,
+}: {
+	children: React.ReactNode
+}) {
+	return (
+		<MantineProvider theme={theme} forceColorScheme='dark'>
+			{children}
+		</MantineProvider>
+	)
 }
