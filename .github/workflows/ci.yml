@@ -19,4 +19,4 @@ jobs:
         run: docker build -t darkneb/docker_mantine:latest .
 
       - name: Push Docker Image
-        run: docker push darkneb/docker_mantine:tagname:latest
+        run: docker push darkneb/docker_mantine:latest
